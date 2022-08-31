@@ -4,11 +4,13 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import steps.PageInitilizer;
+
+import steps.Pageinitilizer;
 
 import java.util.concurrent.TimeUnit;
 
-public class CommonMethods extends PageInitilizer {
+public class CommonMethods extends Pageinitilizer {
+
 
     public static WebDriver driver;
 
@@ -19,7 +21,8 @@ public class CommonMethods extends PageInitilizer {
         driver.get(ConfigReader.getPropertyValyue("url"));
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Constants.IMPLICIT_WAIT, TimeUnit.SECONDS);
-        initilizePages();
+        initilizeObjects();
+
     }
 
     public void closeBrowser() {
